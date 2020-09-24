@@ -35,7 +35,7 @@ public class GenUtils {
 
     public static List<String> getTemplates() {
         List<String> templates = new ArrayList<String>();
-        templates.add("template/Entity.java.vm");
+        templates.add("template/PO.java.vm");
         templates.add("template/Dao.xml.vm");
 
         templates.add("template/menu.sql.vm");
@@ -43,7 +43,7 @@ public class GenUtils {
         templates.add("template/Service.java.vm");
         templates.add("template/ServiceImpl.java.vm");
         templates.add("template/Controller.java.vm");
-        templates.add("template/Dao.java.vm");
+        templates.add("template/Mapper.java.vm");
 
         templates.add("template/index.vue.vm");
         templates.add("template/add-or-update.vue.vm");
@@ -303,16 +303,16 @@ public class GenUtils {
         if (template.contains("MongoChildrenEntity.java.vm")) {
             return packagePath + "entity" + File.separator + "inner" + File.separator + currentTableName+ File.separator + splitInnerName(className)+ "InnerEntity.java";
         }
-        if (template.contains("Entity.java.vm") || template.contains("MongoEntity.java.vm")) {
-            return packagePath + "entity" + File.separator + className + "Entity.java";
+        if (template.contains("PO.java.vm") || template.contains("MongoEntity.java.vm")) {
+            return packagePath + "po" + File.separator + className + "PO.java";
         }
 
-        if (template.contains("Dao.java.vm")) {
-            return packagePath + "dao" + File.separator + className + "Dao.java";
+        if (template.contains("Mapper.java.vm")) {
+            return packagePath + "dao" + File.separator + className + "Mapper.java";
         }
 
         if (template.contains("Service.java.vm")) {
-            return packagePath + "service" + File.separator + className + "Service.java";
+            return packagePath + "service" + File.separator + "I" + className + "Service.java";
         }
 
         if (template.contains("ServiceImpl.java.vm")) {
@@ -324,7 +324,7 @@ public class GenUtils {
         }
 
         if (template.contains("Dao.xml.vm")) {
-            return "main" + File.separator + "resources" + File.separator + "mapper" + File.separator + moduleName + File.separator + className + "Dao.xml";
+            return "main" + File.separator + "resources" + File.separator + "mapper" + File.separator + moduleName + File.separator + className + "Mapper.xml";
         }
 
         if (template.contains("menu.sql.vm")) {

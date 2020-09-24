@@ -1,4 +1,4 @@
-package ${package}.${moduleName}.entity;
+package ${package}.${moduleName}.po;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -6,7 +6,6 @@ import com.baomidou.mybatisplus.annotation.TableName;
 #if(${hasBigDecimal})
 import java.math.BigDecimal;
 #end
-import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
 
@@ -19,7 +18,7 @@ import lombok.Data;
  */
 @Data
 @TableName("${tableName}")
-public class ${className}Entity implements Serializable {
+public class ${className}PO extends BasePO {
 	private static final long serialVersionUID = 1L;
 
 #foreach ($column in $columns)

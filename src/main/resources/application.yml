@@ -4,12 +4,20 @@ server:
 # mysql
 spring:
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    #MySQL配置
-    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/renren_fast?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
-    username: renren
-    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    testOnBorrow: true
+
+    validationQuery: SELECT 1
+    url: jdbc:mysql://180.76.108.173/mail?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
+    username: splitTest
+    password: w9Em0vYpGWApPRvFpk1akwtXrp57db2r
+    hikari:
+      max-lifetime: 1800000
+      minimum-idle: 5
+      connection-test-query: SELECT 1
+      maximum-pool-size: 15
+      idle-timeout: 30000
+      connection-timeout: 30000
     #oracle配置
     #    driverClassName: oracle.jdbc.OracleDriver
     #    url: jdbc:oracle:thin:@47.100.206.162:1521:xe
