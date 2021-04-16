@@ -8,9 +8,9 @@ spring:
     testOnBorrow: true
 
     validationQuery: SELECT 1
-    url: jdbc:mysql://180.76.108.173/mail?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
-    username: splitTest
-    password: w9Em0vYpGWApPRvFpk1akwtXrp57db2r
+    url: jdbc:mysql://127.0.0.1/test?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&&serverTimezone=UTC
+    username: root
+    password: yy12345
     hikari:
       max-lifetime: 1800000
       minimum-idle: 5
